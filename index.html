@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>menu vertical</title>
+	<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<style>
+		.lista{ width: 300px }
+		.lista li{ list-style: none; }
+
+		.desplegar{
+			background-color: #004080;
+			color: white;
+			cursor: pointer;
+			padding: 10px;
+		}
+		.desplegar:hover{	background-color: #003A75; }
+
+		.desplegado li{
+			background-color: #005EBB;
+			color: white;
+			cursor: pointer;
+			margin-left: -11%;
+			padding: 10px;
+			position: relative;
+		}
+		.desplegado li:hover{ background-color: #007CF9; }
+	</style>
+<body>
+	<ul class="lista">
+		<li>
+			<div class="desplegar">Titulo del Items 1</div>
+			<ul class="desplegado">
+				<li>Iterms 1</li>
+				<li>Iterms 2</li>
+				<li>Iterms 3</li>
+			</ul>
+		</li>
+		<li>
+			<div class="desplegar">Titulo del Items 2</div>
+			<ul class="desplegado">
+				<li>Iterms 1</li>
+				<li>Iterms 2</li>
+				<li>Iterms 3</li>
+			</ul>
+		</li>
+		<li >
+			<div class="desplegar">Titulo del Items 3</div>
+			<ul class="desplegado">
+				<li>Iterms 1</li>
+				<li>Iterms 2</li>
+				<li>Iterms 3</li>
+			</ul>
+		</li>				
+	</ul>
+	<script>
+		$('.desplegado').hide();
+		$('.desplegar').click(function(){
+			$(this).parent().find("ul.desplegado").toggle('fast'); 
+		})
+	</script>
+</body>
+</html>
